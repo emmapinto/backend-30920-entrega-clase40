@@ -2,13 +2,13 @@
 import * as model from './model.js'
 
 
- class ProductosMongoDB {
+export default class ProductosMongoDB {
     constructor() {}
 
     leer(id) {
-        return id? 
-            model.productos.find({_id:id}) : 
-            model.productos.find({})
+        return id ? 
+            model.productos.find({_id:id}).lean() : 
+            model.productos.find({}).lean()
     }
     
     guardar(producto) {
@@ -24,6 +24,3 @@ import * as model from './model.js'
         return model.productos.deleteOne( {_id: id })
     }
 }
-
-
-export default ProductosMongoDB

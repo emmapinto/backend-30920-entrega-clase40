@@ -9,7 +9,7 @@ class Productos {
 
     async get() {
         let productos = await this.productosMongoDB.leer()
-        return productos.length? productos : []
+        return productos.length ? productos : []
     }
 
     async listar(id) {
@@ -20,7 +20,7 @@ class Productos {
 
     async listarAll() {
         let productos = await this.productosMongoDB.leer()
-        return productos.length? productos : {error : 'no hay productos cargados'}
+        return productos.length ? productos : {error : 'no hay productos cargados'}
     }
 
     async guardar(prod) {

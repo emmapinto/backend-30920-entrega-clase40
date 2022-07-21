@@ -40,12 +40,14 @@ router.delete("/productos/borrar/:id", async (req, res) => {
 });
 
 router.get("/productos/vista", async (req, res) => {
+
 	let produs = await productos.listarAll();
 	console.log("produs", produs);
 	res.render("vista", {
 		Productos: produs,
 		hayProductos: produs.length,
 	});
+
 });
 
 router.get("/productos/vista-test", async (req, res) => {
